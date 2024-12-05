@@ -1,0 +1,22 @@
+{
+  "HALProvider": {
+    "Other Devices": {
+      "Talon FX (v6)[5]": {
+        "header": {
+          "open": true
+        }
+      }
+    }
+  },
+  "NTProvider": {
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/Field": "Field2d",
+      "/SmartDashboard/PathPlanner Auto": "String Chooser",
+      "/SmartDashboard/Pigeon 2 (v6) [2]": "Gyro"
+    }
+  },
+  "NetworkTables Info": {
+    "visible": true
+  }
+}
