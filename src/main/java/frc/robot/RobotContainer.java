@@ -41,7 +41,7 @@ public class RobotContainer {
   private void configureBindings() {
     driveController.a().onTrue(Commands.runOnce(swerveSubsystem::zeroGyro));
 
-    driveController.b().onTrue(VisionCommands.aimAtTarget(Constants.Vision.frontLimelightName, swerveSubsystem));
+    driveController.b().toggleOnTrue(VisionCommands.aimAtNote(Constants.Vision.frontLimelightName, swerveSubsystem));
   }
 
   public Command getAutonomousCommand() {

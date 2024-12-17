@@ -22,4 +22,22 @@ public class VisionCommands {
             }
         });
     }
+
+    public static Command aimAtNote(String limelightName, SwerveSubsystem swerveSubsystem) {
+        return Commands.run(() -> {
+            double tx = LimelightHelpers.getTX(limelightName);
+            if(Math.abs(tx) > 5) {
+                swerveSubsystem.drive(new Translation2d(-0.3,0), Math.toRadians(tx) * -2, false);
+
+            }
+            else if(Math.abs(tx) > 0) {
+                swerveSubsystem.drive(new Translation2d(-0.3,0), 0, false);
+            }
+            else {
+                swerveSubsystem.drive(new Translation2d(0,0), 0, false);
+            }
+        });
+    } 
+
+    
 }
