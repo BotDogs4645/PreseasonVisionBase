@@ -21,6 +21,12 @@ public class Constants {
 
     }
     public class Vision{
-            public static final String frontLimelightName = "limelight-front";
+        public static final String frontLimelightName = "limelight-front";
+
+        // Mount specs (Limelight)
+        public static final double yMountDegrees = 35;
+        public static final double lensHeightMeters = 1;
+        
+        public static final double noteHeightMeters = 0;
     }
 }
