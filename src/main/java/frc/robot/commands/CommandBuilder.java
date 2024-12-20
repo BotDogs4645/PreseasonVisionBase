@@ -5,6 +5,7 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 import frc.lib.util.LimelightHelpers;
+import frc.robot.subsystems.Limelight;
 import frc.robot.subsystems.SwerveSubsystem;
 
 public class CommandBuilder {
@@ -27,12 +28,14 @@ public class CommandBuilder {
         public static Command aimAtNote(String limelightName, SwerveSubsystem swerveSubsystem) {
             return Commands.run(() -> {
                 double tx = LimelightHelpers.getTX(limelightName);
+                int ta = (int)LimelightHelpers.getTA(limelightName);
+                double speedLimiter = (100 - (ta * 2.0)) / 100.0;
                 if(Math.abs(tx) > 5) {
-                    swerveSubsystem.drive(new Translation2d(-0.3,0), Math.toRadians(tx) * -2, false);
+                    swerveSubsystem.drive(new Translation2d(0.3 * speedLimiter,0), Math.toRadians(tx) * -2, false);
 
                 }
                 else if(Math.abs(tx) > 0) {
-                    swerveSubsystem.drive(new Translation2d(-0.3,0), 0, false);
+                    swerveSubsystem.drive(new Translation2d(0.3 * speedLimiter,0), 0, false);
                 }
                 else {
                     swerveSubsystem.drive(new Translation2d(0,0), 0, false);
