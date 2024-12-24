@@ -40,7 +40,7 @@ public class RobotContainer {
     driveController.a().onTrue(Commands.runOnce(swerveSubsystem::zeroGyro));
 
     driveController.b().toggleOnTrue(CommandBuilder.Vision.aimAtNote(Constants.Vision.frontLimelightName, swerveSubsystem));
-    driveController.x().toggleOnTrue(CommandBuilder.Vision.aimAtTargetRevised(Constants.Vision.frontLimelightName, swerveSubsystem));
+    driveController.x().onTrue(CommandBuilder.Vision.aimAtTargetRevised(Constants.Vision.frontLimelightName, swerveSubsystem));
   }
 
   public Command getAutonomousCommand() {
@@ -69,6 +69,11 @@ public class RobotContainer {
   public void stop()
   {
     swerveSubsystem.stop();
+  }
+
+  public SwerveSubsystem getSwerveSubsystem() 
+  {
+    return swerveSubsystem;
   }
 
 }

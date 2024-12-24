@@ -29,7 +29,7 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
     SmartDashboard.putNumber("limelight-front-pose", LimelightHelpers.getBotPose3d_TargetSpace(Constants.Vision.frontLimelightName).getX());
-
+    System.out.println("POSE x: " + m_robotContainer.getSwerveSubsystem().getPose().getX() + ", POSE y: " + m_robotContainer.getSwerveSubsystem().getPose().getY());
   }
 
   @Override

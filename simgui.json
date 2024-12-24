@@ -16,6 +16,13 @@
       "/SmartDashboard/Pigeon 2 (v6) [2]": "Gyro"
     }
   },
+  "NetworkTables": {
+    "transitory": {
+      "PathPlanner": {
+        "open": true
+      }
+    }
+  },
   "NetworkTables Info": {
     "visible": true
   }
